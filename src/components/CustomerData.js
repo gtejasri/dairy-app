@@ -140,7 +140,7 @@ const CustomerData = () => {
                         <tbody>
                             {customerList.map((customer, k) => {
                                 return (
-                                    <tr k={k}> <td>{customer.customerId}</td>  <td>{customer.firstName}</td> </tr>
+                                    <tr k={k}> <td>{customer.customerId}</td>  <td>{customer.firstName}</td> <td>{customer.LastName}</td><td>{customer.mobileNumber}</td><td>{customer.email}</td></tr>
                                 )
                             })}
                         </tbody>

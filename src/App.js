@@ -1,11 +1,13 @@
 import CustomerData from "./components/CustomerData";
+import SpringBootData from "./components/SpringBootData";
 import Routes from "./Routes";
 
 const App = () => {
   return (
     <div className="bg-light">
        {/* <Routes />  */}
-       <CustomerData/> 
+       {/* <CustomerData/>  */}
+       <SpringBootData/>
     </ div>
   );
 }

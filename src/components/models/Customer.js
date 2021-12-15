@@ -1,7 +1,7 @@
 class Customer {
     customerId;
     firstName;
-    LastName;
+    lastName;
     mobileNumber;
     email;
 }
