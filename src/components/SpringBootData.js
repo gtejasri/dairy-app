@@ -100,22 +100,22 @@ const SpringBootData = () => {
                         placeholder="Enter First Name" />
                     <input
                         type="text"
-                        id="LastName"
-                        name="LastName"
+                        id="lastName"
+                        name="lastName"
                         value={newCustomerObj.lastName}
                         onChange={handleAddCustomer}
                         placeholder="Enter Last Name" />
                     <input
                         type="text"
-                        id="MobileNumber"
-                        name="MobileNumber"
+                        id="mobileNumber"
+                        name="mobileNumber"
                         value={newCustomerObj.mobileNumber}
                         onChange={handleAddCustomer}
                         placeholder="Enter Mobile Number" />
                      <input
                         type="text"
-                        id="Email"
-                        name="Email"
+                        id="email"
+                        name="email"
                         value={newCustomerObj.email}
                         onChange={handleAddCustomer}
                         placeholder="Enter Email" />   
