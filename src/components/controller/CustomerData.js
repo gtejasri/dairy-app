@@ -106,11 +106,9 @@ const CustomerData = () => {
         console.log('deleteCustomerDetails');
         axios.delete(`http://localhost:8086/customer/delete/${deleteCustomer}`)
             .then((response) => {
-                alert(`Customer details deleted successfully.`)
-                dispatch(deleteCustomerById(response.data));  // Sending data to redux store
-                // setDeleteCustomer({})
+                alert(`Customer details deleted successfully.`)    
             })
-            .error(() => {
+            .catch(() => {
                 alert(`Customer not found.`);
             });
 
@@ -308,7 +306,7 @@ const CustomerData = () => {
                 <p>Delete customer by id</p>
                 <form className="form form-group form-primary" onSubmit={submitDeleteCustomer}>
                     <input className="form-control mt-3" type="number" id="deleteCustomer" name="deleteCustomer" value={deleteCustomer} onChange={handleDeleteCustomer} placeholder="Enter Feedback Id" autoFocus required />
-                    <input className="form-control mt-3 btn btn-primary" type="submit" value="Delete Feedback" />
+                    <input className="form-control mt-3 btn btn-primary" type="submit" value="Delete Customer" />
                 </form>
                 {/* <p>Deleted Farmer details: {farmerDataFromStore.farmerId} {farmerDataFromStore.firstName} {farmerDataFromStore.lastName} </p> */}
             </div>
