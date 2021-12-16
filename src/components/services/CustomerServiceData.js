@@ -11,21 +11,21 @@ const viewCustomersService= () => {
     return axios.get(`/customer/all`);
 }
 
-const insertCustomerService = (customer) => {
-    console.log(`getCustomerByIdService`);
-    return axios.post(`/customer/add`, customer);
-}
+// const insertCustomerService = (customer) => {
+//     console.log(`getCustomerByIdService`);
+//     return axios.post(`/customer/add`, customer);
+// }
 
-const updateCustomerService= (customer) => {
-    console.log(`getCustomerByIdService`);
-    return axios.post(`/customer/update`, customer);
-}
+// const updateCustomerService= (customer) => {
+//     console.log(`getCustomerByIdService`);
+//     return axios.post(`/customer/update`, customer);
+// }
 
-const deleteCustomerByIdService = (customerId) => {
-    console.log(`getCustomerByIdService`);
-    return axios.post(`/customer/delete/${customerId}`);
-}
+// const deleteCustomerByIdService = (customerId) => {
+//     console.log(`getCustomerByIdService`);
+//     return axios.post(`/customer/delete/${customerId}`);
+// }
 
 
 
-export { viewCustomerByIdService, viewCustomersService ,insertCustomerService,updateCustomerService,deleteCustomerByIdService};
+export { viewCustomerByIdService, viewCustomersService };

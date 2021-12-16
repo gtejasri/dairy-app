@@ -2,7 +2,7 @@
 import {viewCustomerByIdService,viewCustomersService,insertCustomerService,updateCustomerService, deleteCustomerByIdService} from "./services/CustomerServiceData";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { viewCustomerById, viewCustomers,insertCustomer,updateCustomer,deleteCustomerById } from '../redux/CustomerSlice';
+import { viewCustomerById, viewCustomers,insertCustomer} from '../redux/CustomerSlice';
 
 const CustomerData = () => {
 
@@ -41,41 +41,41 @@ const CustomerData = () => {
             });
     }
 
-    const submitAddCustomers = (evt) => {
-        evt.preventDefault();
-        console.log('submitAddCustomers');
-        insertCustomerService()
-            .then((response) => {
-                dispatch(insertCustomer(response.data));
-            })
-            .catch(() => {
-                alert(`Something is wrong!`);
-            });
-    }
+    // const submitAddCustomers = (evt) => {
+    //     evt.preventDefault();
+    //     console.log('submitAddCustomers');
+    //     insertCustomerService()
+    //         .then((response) => {
+    //             dispatch(insertCustomer(response.data));
+    //         })
+    //         .catch(() => {
+    //             alert(`Something is wrong!`);
+    //         });
+    // }
 
-    const submitUpdateCustomers = (evt) => {
-        evt.preventDefault();
-        console.log('submitUpdateCustomers');
-        updateCustomerService()
-            .then((response) => {
-                dispatch(updateCustomer(response.data));
-            })
-            .catch(() => {
-                alert(`Something is wrong!`);
-            });
-    }
+    // const submitUpdateCustomers = (evt) => {
+    //     evt.preventDefault();
+    //     console.log('submitUpdateCustomers');
+    //     updateCustomerService()
+    //         .then((response) => {
+    //             dispatch(updateCustomer(response.data));
+    //         })
+    //         .catch(() => {
+    //             alert(`Something is wrong!`);
+    //         });
+    // }
 
-    const submitDeleteCustomers = (evt) => {
-        evt.preventDefault();
-        console.log('submitDeleteCustomers');
-        deleteCustomerByIdService()
-            .then((response) => {
-                dispatch(deleteCustomerById(response.data));
-            })
-            .catch(() => {
-                alert(`Something is wrong!`);
-            });
-    }
+    // const submitDeleteCustomers = (evt) => {
+    //     evt.preventDefault();
+    //     console.log('submitDeleteCustomers');
+    //     deleteCustomerByIdService()
+    //         .then((response) => {
+    //             dispatch(deleteCustomerById(response.data));
+    //         })
+    //         .catch(() => {
+    //             alert(`Something is wrong!`);
+    //         });
+    // }
 
     
 
@@ -95,7 +95,7 @@ const CustomerData = () => {
                 <p>Data from store: {customerDataFromStore.customerId} {customerDataFromStore.firstName} </p>
             </div>
 
-            <div className="col-4 border border-light shadow p-3 mb-5 bg-white">
+            {/* <div className="col-4 border border-light shadow p-3 mb-5 bg-white">
                 <p>Delete by id</p>
                 <form className="form form-group form-primary" onSubmit={submitDeleteCustomers}>
                     <input className="form-control mt-3" type="number" id="customerId" name="customerId" value={customerId} onChange={handleCustomer} placeholder="Enter customerId to delete" autoFocus required />
@@ -111,16 +111,16 @@ const CustomerData = () => {
                     <input className="form-control mt-3 btn btn-primary" type="submit" value="update Customer" />
                 </form>
                 <p>Data from store: {customerDataFromStore.customerId} {customerDataFromStore.firstName} </p>
-            </div>
+            </div> */}
 
-            <div className="col-4 border border-light shadow p-3 mb-5 bg-white">
+            {/* <div className="col-4 border border-light shadow p-3 mb-5 bg-white">
                 <p>Add Customer</p>
                 <form className="form form-group form-primary" onSubmit={submitAddCustomers}>
                     <input className="form-control mt-3" type="number" id="customerId" name="customerId" value={customerId} onChange={handleCustomer} placeholder="Add customers" autoFocus required />
                     <input className="form-control mt-3 btn btn-primary" type="submit" value="Add Customer" />
                 </form>
                 <p>Data from store: {customerDataFromStore.customerId} {customerDataFromStore.firstName} </p>
-            </div>
+            </div> */}
 
             <div>
                 <div className="col-4 border border-light shadow p-3 mb-5 bg-white">
@@ -133,14 +133,20 @@ const CustomerData = () => {
                     <table className="table table-light table-striped ">
                         <thead>
                             <tr>
-                                <th>CustomerId</th>
-                                <th>Name</th>
+                                <th>customerId</th>
+                                <th>firstName</th>
+                                <th>lastName</th>
+                                <th>mobileNumber</th>
+                                <th>email</th>
+
+
+                                
                             </tr>
                         </thead>
                         <tbody>
                             {customerList.map((customer, k) => {
                                 return (
-                                    <tr k={k}> <td>{customer.customerId}</td>  <td>{customer.firstName}</td> <td>{customer.LastName}</td><td>{customer.mobileNumber}</td><td>{customer.email}</td></tr>
+                                    <tr k={k}> <td>{customer.customerId}</td>  <td>{customer.firstName}</td> <td>{customer.lastName}</td><td>{customer.mobileNumber}</td><td>{customer.email}</td></tr>
                                 )
                             })}
                         </tbody>

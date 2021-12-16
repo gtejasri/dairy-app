@@ -7,7 +7,7 @@ import Login from "./components/Login";
 import Logout from './components/Logout';
 import Page404 from './components/Page404';
 import Register from "./components/Register";
-import SpringBootData from './components/SpringBootData';
+import SpringCustomerData from './components/SpringCustomerData';
 
 const Routes = () => {
 
@@ -28,7 +28,7 @@ const Routes = () => {
                                 <Route exact path="/" loginStatus > <Home /> </Route>
                                 <Route path="/home" loginStatus> <Home /> </Route>
                                 <Route path="/customer"> <CustomerData /> </Route>
-                                <Route path="/spring"> <SpringBootData /> </Route>
+                                <Route path="/spring"> <SpringCustomerData /> </Route>
                                 <Route path="/logout"> <Logout /> </Route>
                                 <Route path="/*"> <Page404 /> </Route>
                             </Switch>

@@ -1,5 +1,5 @@
 import CustomerData from "./components/CustomerData";
-import SpringBootData from "./components/SpringBootData";
+import SpringCustomerData from "./components/SpringCustomerData";
 import Routes from "./Routes";
 
 const App = () => {
@@ -7,7 +7,7 @@ const App = () => {
     <div className="bg-light">
        {/* <Routes />  */}
        {/* <CustomerData/>  */}
-       <SpringBootData/>
+       <SpringCustomerData/>
     </ div>
   );
 }
