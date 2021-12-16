@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
-import CustomerData from './components/CustomerData';
+import CustomerData from './components/controller/CustomerData';
 import Header from "./components/Header";
 import Home from './components/Home';
 import Login from "./components/Login";

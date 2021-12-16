@@ -1,4 +1,4 @@
-import CustomerData from "./components/CustomerData";
+import CustomerData from "./components/controller/CustomerData";
 import SpringCustomerData from "./components/SpringCustomerData";
 import Routes from "./Routes";
 
@@ -6,8 +6,8 @@ const App = () => {
   return (
     <div className="bg-light">
        {/* <Routes />  */}
-       {/* <CustomerData/>  */}
-       <SpringCustomerData/>
+       <CustomerData/> 
+       {/* <SpringCustomerData/> */}
     </ div>
   );
 }

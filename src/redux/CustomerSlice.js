@@ -30,14 +30,14 @@ const CustomerSlice = createSlice({
             console.log('CustomerSlice reducers getAllCustomers');
             state.customerList = action.payload;
         },
-        insertCustomer: (state, action) => {
-            console.log('CustomerSlice reducers AddCustomers');
-            state.customerList = action.payload;
-        },
-        updateCustomer: (state, action) => {
-            console.log('CustomerSlice reducers updateCustomers');
-            state.customerList = action.payload;
-        },
+        // insertCustomer: (state, action) => {
+        //     console.log('CustomerSlice reducers AddCustomers');
+        //     state.customerList = action.payload;
+        // },
+        // updateCustomer: (state, action) => {
+        //     console.log('CustomerSlice reducers updateCustomers');
+        //     state.customerList = action.payload;
+        // },
         deleteCustomerById: (state, action) => {
             console.log('CustomerSlice reducers deleteCustomerByID');
             state.customerList = action.payload;
@@ -50,6 +50,7 @@ const CustomerSlice = createSlice({
     }
 });
 
-export const { viewCustomerById, viewCustomers,insertCustomer,updateCustomer,deleteCustomerById } = CustomerSlice.actions;
+//  export const { viewCustomerById, viewCustomers,insertCustomer,updateCustomer,deleteCustomerById } = CustomerSlice.actions;
+ export const { viewCustomerById, viewCustomers ,deleteCustomerById} = CustomerSlice.actions;
 
 export default CustomerSlice.reducer;

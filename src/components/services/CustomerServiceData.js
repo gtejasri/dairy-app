@@ -2,30 +2,35 @@ import axios from 'axios';
 
 // Create services for other components in this way. 
 
-const viewCustomerByIdService = (customerId) => {
+const getCustomerByIdService = (customerId) => {
     console.log(`getCustomerByIdService`);
-    return axios.get(`/customer/view/${customerId}`);
+    return axios.get(`http://localhost:8086/customer/view/${customerId}`);
 }
-const viewCustomersService= () => {
+const getAllCustomerService= () => {
     console.log(`getAllCustomersService`);
-    return axios.get(`/customer/all`);
+    return axios.get(`http://localhost:8086/customer/all`);
 }
 
-// const insertCustomerService = (customer) => {
-//     console.log(`getCustomerByIdService`);
-//     return axios.post(`/customer/add`, customer);
-// }
+const AddCustomerService = (customer) => {
+    console.log(`AddCustomerService`);
+    return axios.post(`http://localhost:8086/customer/add`, customer);
+}
 
-// const updateCustomerService= (customer) => {
-//     console.log(`getCustomerByIdService`);
-//     return axios.post(`/customer/update`, customer);
-// }
+const updateCustomerService= (customer) => {
+    console.log(`UpdateCustomerIdService`);
+    return axios.post(`http://localhost:8086/customer/update`, customer);
+}
 
-// const deleteCustomerByIdService = (customerId) => {
-//     console.log(`getCustomerByIdService`);
-//     return axios.post(`/customer/delete/${customerId}`);
-// }
+const deleteCustomerByIdService = (customerId) => {
+    console.log(`deleteCustomerByIdService`);
+    return axios.post(`http://localhost:8086/customer/delete/${customerId}`);
+}
 
 
 
-export { viewCustomerByIdService, viewCustomersService };
+// export { getCustomerByIdService, getAllCustomerService };
+export { getCustomerByIdService, getAllCustomerService ,AddCustomerService,updateCustomerService,deleteCustomerByIdService};
+
+
+
+
