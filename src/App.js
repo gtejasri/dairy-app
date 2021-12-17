@@ -1,23 +1,25 @@
 // import CustomerData from "./components/controller/CustomerData";
 // import SpringCustomerData from "./components/SpringCustomerData";
 // import Routes from "./Routes";
-import AddCustomer from "./components/controller/AddCustomer";
-import GetAllCustomers from "./components/controller/GetAllCustomers";
-import GetCustomerById from "./components/controller/GetCustomerById";
-import UpdateCustomer from "./components/controller/UpdateCustomer";
-import DeleteCustomer from "./components/controller/DeleteCustomer";
+// import AddCustomer from "./components/controller/AddCustomer";
+// import GetAllCustomers from "./components/controller/GetAllCustomers";
+// import GetCustomerById from "./components/controller/GetCustomerById";
+// import UpdateCustomer from "./components/controller/UpdateCustomer";
+// import DeleteCustomer from "./components/controller/DeleteCustomer";
+import CustomerPayToDealer from "./components/payToDealerController/CustomerPayToDealer";
 
 const App = () => {
   return (
     <div className="bg-light">
-      <AddCustomer/>
+      {/* <AddCustomer/>
       <GetAllCustomers/>
       <GetCustomerById/>
       <UpdateCustomer/>
-      <DeleteCustomer/>
+      <DeleteCustomer/> */}
        {/* <Routes />  */}
        {/* <CustomerData/>  */}
        {/* <SpringCustomerData/> */}
+       <CustomerPayToDealer/>
     </ div>
   );
 }
