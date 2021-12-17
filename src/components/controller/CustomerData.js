@@ -162,6 +162,7 @@ const CustomerData = () => {
                     </table>
                 </div>
             </div>
+            
             <div className="col-4 border border-light shadow p-3 mb-5 bg-white">
             
             <p>Add New Customer</p>
