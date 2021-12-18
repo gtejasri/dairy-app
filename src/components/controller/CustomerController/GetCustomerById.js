@@ -1,7 +1,7 @@
-import { getCustomerByIdService } from "../services/CustomerServiceData";
+import { getCustomerByIdService } from "../../services/CustomerServiceData";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { viewCustomerById } from "../../redux/CustomerSlice";
+import { viewCustomerById } from "../../../redux/CustomerSlice";
 
 
 

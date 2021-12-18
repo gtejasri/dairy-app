@@ -1,8 +1,8 @@
-import { getAllCustomerService } from "../services/CustomerServiceData";
+import { getAllCustomerService } from "../../services/CustomerServiceData";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { viewCustomers } from "../../redux/CustomerSlice";
-import Customer from "../models/Customer";
+import { viewCustomers } from "../../../redux/CustomerSlice";
+import Customer from "../../models/Customer";
 
 
 const GetAllCustomers = () => {

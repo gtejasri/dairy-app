@@ -1,9 +1,9 @@
-import { getCustomerByIdService,getAllCustomerService,AddCustomerService,updateCustomerService,deleteCustomerByIdService } from "../services/CustomerServiceData";
+import { getCustomerByIdService,getAllCustomerService,AddCustomerService,updateCustomerService,deleteCustomerByIdService } from "../../services/CustomerServiceData";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { viewCustomerById,viewCustomers ,insertCustomer,updateCustomer,deleteCustomerById} from "../../redux/CustomerSlice";
+import { viewCustomerById,viewCustomers ,insertCustomer,updateCustomer,deleteCustomerById} from "../../../redux/CustomerSlice";
 import axios from "axios";
-import Customer from "../models/Customer";
+import Customer from "../../models/Customer";
 
 
 const CustomerData = () => {

@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import axios from "axios";
-import Customer from "../models/Customer";
+import Customer from "../../models/Customer";
 
 
 const UpdateCustomer = () => {
