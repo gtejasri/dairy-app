@@ -1,5 +1,5 @@
 
-import { useSelector } from "react-redux";
+
 import { useState } from "react";
 import axios from "axios";
 
@@ -12,8 +12,6 @@ const DeleteCustomer = () => {
     const [deleteCustomer, setDeleteCustomer] = useState('');
 
     // const customerDelete = useSelector((state) => state.customer.customerDelete);
-
-
 
     const handleDeleteCustomer = (ev) => {
         console.log('handleDeleteCustomer');

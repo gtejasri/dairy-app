@@ -1,25 +1,15 @@
-// import { getFarmerByIdService } from "../services/FarmService";
-import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
-import { deleteDealerService,updateDealerService,insertDealerService,getDealerService,getAllDealersService } from "../services/DealerServices";
-import axios from "axios";
 
-import {getDealer,getAllDealers} from "../../redux/DealerSlice";
-import Dealer from "../models/Dealer";
+import { useState } from "react";
+import axios from "axios";
+import Dealer from "../../models/Dealer";
+
+
 const AddDealer = () => {
 
 
     const [newDealerObj, setNewDealerObj] = useState(new Dealer());
-    const [updtDealerObj, setUpdtDealerObj] = useState(new Dealer());
     const [displayDealerObj, setDisplayDealerObj] = useState(new Dealer());
-    const [updateDealerObj, setUpdateDealerObj] = useState(new Dealer());
-    const [dealerId, setdealerId] = useState('');
-    const [deleteDealer, setDeleteDealer] = useState('');
-    const dispatch = useDispatch();
-    const dealerDataFromStore = useSelector((state) => state.dealer.dealerState);
-    const dealerList = useSelector((state) => state.dealer.dealerList);
-    const dealerDelete = useSelector((state) => state.dealer.dealerDelete);
-    
+
     const handleAddDealer = (d) => {
         console.log(d.target.value);
         setNewDealerObj({
@@ -30,7 +20,7 @@ const AddDealer = () => {
     const submitinsertDealer = (evt) => {
         evt.preventDefault();
         console.log('addDealer');
-        axios.post(`http://localhost:8082/Dealer/add`, newDealerObj)
+        axios.post(`http://localhost:8086/dealer/add`, newDealerObj)
             .then((response) => {
                 setDisplayDealerObj(response.data);
                 alert('dealer added successfully.');
@@ -42,7 +32,9 @@ const AddDealer = () => {
             });
     }
     return (
-        <div className="col-4 border border-light shadow p-3 mb-5 bg-white">
+        <div className="container">
+        <h1 className="display-4 text-primary mt-3 mb-3" >Add Dealer Component</h1>
+        <div className="col-6 border border-light shadow p-3 mb-5 bg-white">
             
         <p>Add New Dealer</p>
         {/* <form onSubmit={submitAddEmp}> */}
@@ -101,6 +93,7 @@ const AddDealer = () => {
         </div>
         <p>New Dealer Data: {displayDealerObj.DealerId} {displayDealerObj.firstName} {displayDealerObj.lastName}{displayDealerObj.mobileNumber}{displayDealerObj.email}</p>
         </div>
+        </div>
         );
 }
-export default InsertDealer;
+export default AddDealer;

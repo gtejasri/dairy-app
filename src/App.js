@@ -1,4 +1,4 @@
-// import CustomerData from "./components/controller/CustomerData";
+// import CustomerData from "./components/controller/CustomerConstroller/CustomerData";
 // import SpringCustomerData from "./components/SpringCustomerData";
 // import Routes from "./Routes";
 // import AddCustomer from "./components/controller/AddCustomer";
@@ -6,7 +6,13 @@
 // import GetCustomerById from "./components/controller/GetCustomerById";
 // import UpdateCustomer from "./components/controller/UpdateCustomer";
 // import DeleteCustomer from "./components/controller/DeleteCustomer";
-import CustomerPayToDealer from "./components/payToDealerController/CustomerPayToDealer";
+import  AddDealer from "./components/controller/DealerController/AddDealer";
+import DeleteDealer from "./components/controller/DealerController/DeleteDealer";
+import GetAllDealer from "./components/controller/DealerController/GetAllDealer";
+import GetDealerById from "./components/controller/DealerController/GetDealerById";
+import UpdateDealer from "./components/controller/DealerController/UpdateDealer";
+
+// import CustomerPayToDealer from "./components/payToDealerController/CustomerPayToDealer";
 
 const App = () => {
   return (
@@ -19,7 +25,13 @@ const App = () => {
        {/* <Routes />  */}
        {/* <CustomerData/>  */}
        {/* <SpringCustomerData/> */}
-       <CustomerPayToDealer/>
+       <GetAllDealer/>
+       <AddDealer/>
+       <UpdateDealer/>
+       <DeleteDealer/>
+       <GetDealerById/>
+
+       {/* <CustomerPayToDealer/> */}
     </ div>
   );
 }

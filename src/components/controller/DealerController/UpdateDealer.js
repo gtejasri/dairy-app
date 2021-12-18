@@ -1,24 +1,19 @@
-// import { getFarmerByIdService } from "../services/FarmService";
-import { useDispatch, useSelector } from "react-redux";
+
 import { useState } from "react";
-import { deleteDealerService,updateDealerService,insertDealerService,getDealerService,getAllDealersService } from "../services/DealerServices";
+
 import axios from "axios";
 
-import {getDealer,getAllDealers} from "../../redux/DealerSlice";
-import Dealer from "../models/Dealer";
+
+import Dealer from "../../models/Dealer";
+
 const UpdateDealer = () => {
 
 
     const [newDealerObj, setNewDealerObj] = useState(new Dealer());
     const [updtDealerObj, setUpdtDealerObj] = useState(new Dealer());
-    const [displayDealerObj, setDisplayDealerObj] = useState(new Dealer());
     const [updateDealerObj, setUpdateDealerObj] = useState(new Dealer());
-    const [dealerId, setdealerId] = useState('');
-    const [deleteDealer, setDeleteDealer] = useState('');
-    const dispatch = useDispatch();
-    const dealerDataFromStore = useSelector((state) => state.dealer.dealerState);
-    const dealerList = useSelector((state) => state.dealer.dealerList);
-    const dealerDelete = useSelector((state) => state.dealer.dealerDelete);
+    
+   
     const handleUpdateDealer = (d) => {
         console.log(d.target.value);
         setUpdtDealerObj({
@@ -29,7 +24,7 @@ const UpdateDealer = () => {
     const submitUpdateDealer = (evt) => {
         evt.preventDefault();
         console.log('addDealer');
-        axios.put(`http://localhost:8082/Dealer/update`, updtDealerObj)
+        axios.put(`http://localhost:8086/dealer/update`, updtDealerObj)
             .then((response) => {
                 setUpdateDealerObj(response.data);
                 alert('Dealer details updated successfully.');
@@ -41,6 +36,7 @@ const UpdateDealer = () => {
             });
     }
     return (
+        <div className="container">
         <div className="col-4 border border-light shadow p-3 mb-5 bg-white">
             
         <p>Update New Dealer</p>
@@ -108,6 +104,7 @@ const UpdateDealer = () => {
             />
         </div>
         <p>Updated Dealer Data: {updateDealerObj.DealerId} {updateDealerObj.firstName} {updateDealerObj.lastName} {updateDealerObj.mobileNumber} {updateDealerObj.email}</p>
+    </div>
     </div>
     );
 }

@@ -22,7 +22,7 @@ const DealerSlice = createSlice({
 
     reducers: {
 
-        getDealer: (state, action) => {
+        getDealById: (state, action) => {
             console.log('dealer slice reducer');
             state.dealerState = action.payload;
         },
@@ -31,7 +31,7 @@ const DealerSlice = createSlice({
             console.log('dealer Slice reducers getAllfarmer');
             state.dealerList = action.payload;
         },
-        deleteDealer: (state, action) => {
+        deletedealById: (state, action) => {
             console.log('farmSlice reducers deleteFarmerById');
             state.dealerList = action.payload;
         },
@@ -41,6 +41,6 @@ const DealerSlice = createSlice({
     }
 });
 
-export const {getDealer , getAllDealers, deleteDealer} = DealerSlice.actions;
+export const {getDealById , getAllDealers, deletedealById} = DealerSlice.actions;
 
 export default DealerSlice.reducer;

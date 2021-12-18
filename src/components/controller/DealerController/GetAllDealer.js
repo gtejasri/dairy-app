@@ -1,25 +1,14 @@
-// import { getFarmerByIdService } from "../services/FarmService";
-import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
-import { deleteDealerService,updateDealerService,insertDealerService,getDealerService,getAllDealersService } from "../services/DealerServices";
-import axios from "axios";
 
-import {getDealer,getAllDealers} from "../../redux/DealerSlice";
-import Dealer from "../models/Dealer";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllDealersService} from "../../../components/services/DealerServices";
+import { getAllDealers } from "../../../redux/DealerSlice";
 
     const GetAllDealer = () => {
 
 
-        const [newDealerObj, setNewDealerObj] = useState(new Dealer());
-        const [updtDealerObj, setUpdtDealerObj] = useState(new Dealer());
-        const [displayDealerObj, setDisplayDealerObj] = useState(new Dealer());
-        const [updateDealerObj, setUpdateDealerObj] = useState(new Dealer());
-        const [dealerId, setdealerId] = useState('');
-        const [deleteDealer, setDeleteDealer] = useState('');
+        
         const dispatch = useDispatch();
-        const dealerDataFromStore = useSelector((state) => state.dealer.dealerState);
         const dealerList = useSelector((state) => state.dealer.dealerList);
-        const dealerDelete = useSelector((state) => state.dealer.dealerDelete);
 
         
         const submitGetAllDealer = (evt) => {
@@ -27,13 +16,15 @@ import Dealer from "../models/Dealer";
             console.log('submitGetAllDealer');
             getAllDealersService()
                 .then((response) => {
-                    dispatch(getAllDealersService(response.data));
+                    dispatch(getAllDealers(response.data));
                 })
                 .catch(() => {
                     alert(`Something is wrong!`);
                 });
         }
         return (
+            <div className="container">
+            <h1 className="display-5 text-primary mt-3 mb-3" >Find All Customer Component</h1>
             <div>
                 <div className="col-6 border border-light shadow p-3 mb-5 bg-white">
                     <p>List of all Dealers</p>
@@ -45,20 +36,29 @@ import Dealer from "../models/Dealer";
                     <table className="table table-light table-striped ">
                         <thead>
                             <tr>
-                                <th>Dealerid</th>
+                                <th>DealerId</th>
                                 <th>Name</th>
                                 <th>lastname</th>
+                                <th>mobileNumber</th>
+                                <th>email</th>
                             </tr>
                         </thead>
                         <tbody>
                             {dealerList.map((dealer, k) => {
                                 return (
-                                    <tr k={k}> <td>{dealer.dealarId}</td> <td>{dealer.firstName}</td><td>{dealer.lastName}</td></tr>
+                                    <tr k={k}> 
+                                    <td>{dealer.dealerId}</td>
+                                     <td>{dealer.firstName}</td>
+                                     <td>{dealer.lastName}</td>
+                                     <td>{dealer.mobileNumber}</td>
+                                     <td>{dealer.email}</td>
+                                     </tr>
                                 )
                             })}
                         </tbody>
                     </table>
                 </div>
+            </div>
             </div>
             );
         }

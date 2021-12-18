@@ -1,25 +1,19 @@
-// import { getFarmerByIdService } from "../services/FarmService";
+
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { deleteDealerService,updateDealerService,insertDealerService,getDealerService,getAllDealersService } from "../services/DealerServices";
-import axios from "axios";
+import { getDealerService } from "../../services/DealerServices";
+import {getDealById} from "../../../redux/DealerSlice";
 
-import {getDealer,getAllDealers} from "../../redux/DealerSlice";
-import Dealer from "../models/Dealer";
 
 const GetDealerById = () => {
 
 
-    const [newDealerObj, setNewDealerObj] = useState(new Dealer());
-    const [updtDealerObj, setUpdtDealerObj] = useState(new Dealer());
-    const [displayDealerObj, setDisplayDealerObj] = useState(new Dealer());
-    const [updateDealerObj, setUpdateDealerObj] = useState(new Dealer());
     const [dealerId, setdealerId] = useState('');
-    const [deleteDealer, setDeleteDealer] = useState('');
+    
     const dispatch = useDispatch();
     const dealerDataFromStore = useSelector((state) => state.dealer.dealerState);
     const dealerList = useSelector((state) => state.dealer.dealerList);
-    const dealerDelete = useSelector((state) => state.dealer.dealerDelete);
+   
     const handleDealer = (d) => {
         console.log('handleDealer');
         setdealerId(d.target.value);
@@ -28,7 +22,7 @@ const GetDealerById = () => {
         evt.preventDefault();
         console.log('submitGetDealerservice');
         getDealerService(dealerId)
-            .then((response) => { dispatch(getDealerService(response.data)) })
+            .then((response) => { dispatch(getDealById(response.data)) })
             .catch(() => {
                 alert(`Dealer with ${dealerId} not found.`);
             });

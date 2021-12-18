@@ -1,4 +1,5 @@
 import customerReducer from './CustomerSlice';
+import dealerReducer from './DealerSlice';
 
 // steps - 
 // 1. create store - only one 
@@ -17,6 +18,7 @@ const store = configureStore(
     {
         reducer: {
             customer: customerReducer,
+            dealer : dealerReducer,
             
             // ,
             // anotherComponent: anotherComponentReducer
