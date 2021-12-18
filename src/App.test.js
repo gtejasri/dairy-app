@@ -11,6 +11,13 @@ import GetCustomerById from "./components/controller/CustomerController/GetCusto
 import DeleteCustomer from "./components/controller/CustomerController/DeleteCustomer";
 import UpdateCustomer from './components/controller/CustomerController/UpdateCustomer';
 
+import UpdateDealer from "./components/controller/DealerController/UpdateDealer";
+import DeleteDealer from './components/controller/DealerController/DeleteDealer';
+import AddDealer from "./components/controller/DealerController/AddDealer";
+import GetAllDealer from './components/controller/DealerController/GetAllDealer';
+import GetDealerById from "./components/controller/DealerController/GetDealerById";
+
+
 
 
 beforeAll(() => {
@@ -67,6 +74,54 @@ test('render Data from Update New Customer', () => {
   const linkElement = screen.getByText('Update New Customer');
   expect(linkElement).toBeInTheDocument();
 });
+
+test('render Data from Update New Dealer', () => {
+   
+  render(
+    <Provider store={store} >
+       <UpdateDealer/>
+    </Provider>)
+  const linkElement = screen.getByText('Update New Dealer');
+  expect(linkElement).toBeInTheDocument();
+});
+
+test('render Data  Delete dealer by id', () => {
+  render(
+    <Provider store={store} >
+      <DeleteDealer/>
+    </Provider>)
+  const linkElement = screen.getByText('Delete Dealer by id');
+  expect(linkElement).toBeInTheDocument();
+});
+
+test('render Data from Add New Dealer', () => {
+  render(
+    <Provider store={store} >
+      <AddDealer/>
+    </Provider>)
+  const linkElement = screen.getByText('Add New Dealer');
+  expect(linkElement).toBeInTheDocument();
+});
+
+test('render Data from List of all Dealers', () => {
+  render(
+    <Provider store={store} >
+       <GetAllDealer/>
+    </Provider>)
+  const linkElement = screen.getByText('List of all Dealers');
+  expect(linkElement).toBeInTheDocument();
+});
+
+test('render Data from Find Dealer by id', () => {
+   
+  render(
+    <Provider store={store} >
+       <GetDealerById/>
+    </Provider>)
+  const linkElement = screen.getByText('Find Dealer by id');
+  expect(linkElement).toBeInTheDocument();
+});
+
  
 
 
